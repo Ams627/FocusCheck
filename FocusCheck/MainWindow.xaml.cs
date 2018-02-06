@@ -26,6 +26,16 @@ namespace FocusCheck
                 System.Diagnostics.Debug.WriteLine($"Key pressed is {e.Key}");
             };
 
+            LostFocus += (s, e) =>
+            {
+                System.Diagnostics.Debug.WriteLine($"Lost focus");
+            };
+
+            LostKeyboardFocus += (s, e) =>
+            {
+                System.Diagnostics.Debug.WriteLine($"Lost focus: old focus was {e.OldFocus} new focus is {e.NewFocus}");
+            };
+
             var timer = new DispatcherTimer
             {
                 Interval = TimeSpan.FromMilliseconds(500)

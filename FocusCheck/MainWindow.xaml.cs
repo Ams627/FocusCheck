@@ -43,7 +43,8 @@ namespace FocusCheck
             timer.Tick += (s, e) =>
             {
                 var kbdFocus = Keyboard.FocusedElement;
-                System.Diagnostics.Debug.WriteLine($"{kbdFocus?.ToString() ?? "Nothing"} has the focus");
+                System.Diagnostics.Debug.WriteLine($"{kbdFocus?.ToString() ?? "Nothing"} has the keyboard focus");
+                System.Diagnostics.Debug.WriteLine($"Logical focus {this.IsFocused}");
             };
             timer.Start();
 
